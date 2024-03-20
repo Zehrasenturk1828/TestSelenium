@@ -1,0 +1,59 @@
+Yer Bulucuların Özellikleri ve Kullanımları
+
+Selenium Web Driver’da ilgili elementleri bulabilmek için ‘findElement/findElements’ syntaxını kullanmalıyız.
+
+1)ID
+
+ID, web sayfasında her öğeye özgü olduğu düşünülerek öğeleri bulmanın en yaygın yoludur. Id’nin değişken olup olmadığı sayfa yenilenerek tekrar ilgili elemente ulaşıp kontrol ederek anlaşılabilir.
+driver.findElement(By.id(“createacc”))
+
+2)ClassName
+
+ClassName locator, elementin class özelliği kullanılarak bulunmasını sağlar.
+driver.findElement(By.className(“btn btn-lg btn-primary”))
+
+3)Name:
+
+Selenium WebDriver’daki Name locator, ID gibi kullanılabilir.
+driver.findElement(By.name(“login-password”))
+
+4)Tag Name
+
+Selenium WebDriver’daki bu bulucu, div etiketi, etiket vb. gibi etiket adlarına sahip öğeleri tanımlamak için kullanılır.
+driver.findElements(By.tagName());
+
+5)LinkText
+
+Elementler, bağlantı metni aracılığıyla yerleştirilebilir. Aynı metnin birden çok bağlantısının bulunduğu bir senaryoda, ilk bağlantı seçilir.
+Örnek element;
+<a href=”https://medium.com/@ilkebasalak” target=”_blank”>Blog</a>
+Elementi bulmak için linktext kullanımı;
+Syntax: driver.findElement(By.linkText(“Blog”))
+
+6)CSS Selector
+
+Bir elementte ID ya da name ile ilgili bir bilgi yoksa veya bunlar değişken ise CSS selector ve Xpath ile elementi bulmaya çalışırız. Xpath ile karşılaştırıldığında CSS selector daha hızlı çalışmaktadır.
+
+CSS Seçicileri çeşitli biçimlerde bulunabilir:
+
+1) Tag ve ID
+2) Tag ve Class
+3) Tag ve Attribute
+4) Tag, Class ve Attribute
+5) Matches (Starts with, Ends with, Contains)
+6) Child elementler
+
+7)Xpath
+
+Xpath, XML ifadelerini kullanarak web sayfasındaki öğeleri bulmaya yardımcı olur.
+Xpath=//tagname[@Attribute=‘Value’]
+tagname= Hedeflediğiniz elementin etiketi, örneğin bir giriş(input) etiketini ve ya bağlantı(anchor) etiketini, vb. belirtir.
+attribute= ‘@‘ ön eki ve karşılık gelen değerleri ile tanımlanır. Name, ID, Class vb.olabilir.
+Xpath Seçicileri çeşitli biçimlerde bulunabilir:
+
+1) Standard Xpath
+2) Contains
+3) AND & OR
+4) Starts-with
+5) Text
+
